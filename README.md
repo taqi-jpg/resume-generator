@@ -5,7 +5,8 @@
 ![License](https://img.shields.io/badge/License-MIT-green)
 ![Status](https://img.shields.io/badge/Project-Active-success)
 
-![App Preview](streamlit/assets/preview.png)
+![Live Preview](streamlit/assets.png)
+
 
 ---
 
