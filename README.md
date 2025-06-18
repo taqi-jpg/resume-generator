@@ -5,7 +5,7 @@
 ![License](https://img.shields.io/badge/License-MIT-green)
 ![Status](https://img.shields.io/badge/Project-Active-success)
 
-![App Preview](assets/preview.png)
+![App Preview](streamlit/assets/preview.png)
 
 ---
 
@@ -39,7 +39,7 @@ The **Real-Time Resume Generator** is a dynamic web application that allows user
 
 > Here's what it looks like in action:
 
-![Live Preview](assets/preview.png)
+![Live Preview](streamlit/assets/preview.png)
 
 ---
 
@@ -50,3 +50,40 @@ The **Real-Time Resume Generator** is a dynamic web application that allows user
 ```bash
 git clone https://github.com/taqi-jpg/resume-generator.git
 cd resume-generator/streamlit
+
+ 2. Install dependencies
+bash
+Copy
+Edit
+pip install -r ../_requirements.txt
+3. Run the app
+bash
+Copy
+Edit
+streamlit run app.py
+The app will be available at:
+👉 http://localhost:8501
+
+🌐 Live App
+Try the hosted version on Streamlit Cloud:
+🔗 https://taqi-jpg-resume-generator.streamlit.app
+
+📁 Project Structure
+lua
+Copy
+Edit
+resume-generator/
+├── index.html
+├── style.css
+├── script.js
+├── streamlit/
+│   ├── app.py
+│   ├── _requirements.txt
+│   └── assets/
+│       └── preview.png
+└── README.md
+📜 License
+This project is licensed under the MIT License.
+
+🙌 Acknowledgements
+Built with ❤️ by @taqi-jpg
