@@ -1,5 +1,5 @@
-import pdfkit
-import tempfile
+from xhtml2pdf import pisa
+import io
 import streamlit as st
 
 st.set_page_config(page_title="Resume Generator", layout="centered")
@@ -37,8 +37,7 @@ if education:
     st.markdown(education)
 
 if st.button("📄 Download Resume as PDF"):
-    # Create HTML content for PDF
-    html_content = f"""
+    result_html = f"""
     <h1>{name}</h1>
     <p><strong>Email:</strong> {email}</p>
     <p><strong>Phone:</strong> {phone}</p>
@@ -53,14 +52,18 @@ if st.button("📄 Download Resume as PDF"):
     <p>{education}</p>
     """
 
-    # Create temporary file
-    with tempfile.NamedTemporaryFile(delete=False, suffix=".pdf") as f:
-        pdfkit.from_string(html_content, f.name)
-        with open(f.name, "rb") as file:
-            btn = st.download_button(
-                label="📥 Click to Download PDF",
-                data=file,
-                file_name="resume.pdf",
-                mime="application/pdf"
-            )
+    pdf_buffer = io.BytesIO()
+    pisa_status = pisa.CreatePDF(io.StringIO(result_html), dest=pdf_buffer)
+
+    if not pisa_status.err:
+        st.download_button(
+            label="📥 Click to Download PDF",
+            data=pdf_buffer.getvalue(),
+            file_name="resume.pdf",
+            mime="application/pdf"
+        )
+    else:
+        st.error("❌ Error generating PDF")
+
+            
 
