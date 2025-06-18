@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Resume Generator</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+</head>
+<body>
+  <div class="container my-4">
+    <h2 class="text-center mb-4">📝 Real-Time Resume Generator</h2>
+    
+    <div class="row">
+      <!-- Input Form -->
+      <div class="col-md-6">
+        <form id="resumeForm">
+          <div class="form-group">
+            <label for="fullName">Full Name:</label>
+            <input type="text" id="fullName" class="form-control" oninput="updateResume()"/>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" class="form-control" oninput="updateResume()"/>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone:</label>
+            <input type="text" id="phone" class="form-control" oninput="updateResume()"/>
+          </div>
+
+          <div class="form-group">
+            <label for="skills">Skills (comma-separated):</label>
+            <input type="text" id="skills" class="form-control" oninput="updateResume()"/>
+          </div>
+
+          <div class="form-group">
+            <label for="experience">Experience:</label>
+            <textarea id="experience" class="form-control" rows="3" oninput="updateResume()"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="education">Education:</label>
+            <textarea id="education" class="form-control" rows="2" oninput="updateResume()"></textarea>
+          </div>
+        </form>
+      </div>
+
+      <!-- Resume Preview -->
+      <div class="col-md-6">
+        <div id="resumePreview" class="p-4 border bg-white">
+          <h3 id="previewName">Your Name</h3>
+          <p id="previewEmail">your@email.com</p>
+          <p id="previewPhone">+91-XXXXXXXXXX</p>
+          <hr/>
+          <h5>Skills</h5>
+          <ul id="previewSkills"></ul>
+
+          <h5>Experience</h5>
+          <p id="previewExperience"></p>
+
+          <h5>Education</h5>
+          <p id="previewEducation"></p>
+        </div>
+
+        <button class="btn btn-success mt-3" onclick="downloadResume()">Download PDF</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</body>
+</html>
