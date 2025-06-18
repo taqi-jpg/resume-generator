@@ -36,12 +36,6 @@ The **Real-Time Resume Generator** is a dynamic web application that allows user
 
 ---
 
-## 📸 Screenshot
-
-> Here's what it looks like in action:
-
-![Live Preview](streamlit/assets/preview.png)
-
 ---
 
 ## ▶️ How to Run Locally
